@@ -2,8 +2,7 @@ package com.bradescoConexoes.demo.dto;
 
 import java.util.List;
 
-import com.bradescoConexoes.demo.domain.Adress;
-import com.bradescoConexoes.demo.domain.AvaliationDto;
+import com.bradescoConexoes.demo.domain.AdressDto;
 
 public class LocalMarketDto {
 
@@ -11,21 +10,21 @@ public class LocalMarketDto {
 	
 	private String companyName;
 	
-	private Adress adress;
+	private AdressDto adress;
 
-	private CategoryDto categoryDto;
+	private CategoryDto category;
 
 	private List<AvaliationDto> avaliations;
 	
 	
 
-	public LocalMarketDto(Long id, String companyName, Adress adress, CategoryDto categoryDto,
+	public LocalMarketDto(Long id, String companyName, AdressDto adress, CategoryDto categoryDto,
 			List<AvaliationDto> avaliations) {
 		super();
 		this.id = id;
 		this.companyName = companyName;
 		this.adress = adress;
-		this.categoryDto = categoryDto;
+		this.category = categoryDto;
 		this.avaliations = avaliations;
 	}
 
@@ -45,20 +44,20 @@ public class LocalMarketDto {
 		this.companyName = companyName;
 	}
 
-	public Adress getAdress() {
+	public AdressDto getAdress() {
 		return adress;
 	}
 
-	public void setAdress(Adress adress) {
+	public void setAdress(AdressDto adress) {
 		this.adress = adress;
 	}
 
 	public CategoryDto getCategoryDto() {
-		return categoryDto;
+		return category;
 	}
 
 	public void setCategoryDto(CategoryDto categoryDto) {
-		this.categoryDto = categoryDto;
+		this.category = categoryDto;
 	}
 
 	public List<AvaliationDto> getAvaliations() {
