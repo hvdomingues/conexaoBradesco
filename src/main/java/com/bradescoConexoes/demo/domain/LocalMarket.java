@@ -31,7 +31,7 @@ public class LocalMarket implements Serializable{
 	
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "adress_id")
-	private AdressDto adress;
+	private Adress adress;
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id")
@@ -40,11 +40,14 @@ public class LocalMarket implements Serializable{
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="localMarket")
 	private List<Avaliation> avaliations;
 
-	public LocalMarket(String companyName, AdressDto adress, Category category) {
+	public LocalMarket(String companyName, Adress adress, Category category) {
 		super();
 		this.companyName = companyName;
 		this.adress = adress;
 		this.category = category;
+	}
+
+	public LocalMarket() {
 	}
 
 	public Long getId() {
@@ -63,11 +66,11 @@ public class LocalMarket implements Serializable{
 		this.companyName = companyName;
 	}
 
-	public AdressDto getAdress() {
+	public Adress getAdress() {
 		return adress;
 	}
 
-	public void setAdress(AdressDto adress) {
+	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
 

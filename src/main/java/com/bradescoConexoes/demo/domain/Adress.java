@@ -39,6 +39,11 @@ public class Adress implements Serializable{
 	@Column(name="aditional_adress_data")
 	private String aditionalAdressData;
 	
+	@Column(name="latitude")
+	private Double latitude;
+	@Column(name = "longitude")
+	private Double longitude;
+	
 	@OneToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinColumn(name = "local_market_id")
 	private LocalMarket localMarket;
@@ -94,6 +99,8 @@ public class Adress implements Serializable{
 	
 	
 	
+	
+	
 	public LocalMarket getLocalMarket() {
 		return localMarket;
 	}
@@ -101,6 +108,21 @@ public class Adress implements Serializable{
 		this.localMarket = localMarket;
 	}
 	
+	
+	
+	
+	public Double getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+	public Double getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

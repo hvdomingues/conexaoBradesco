@@ -42,7 +42,7 @@ public class LocalMarketController {
 	@RequestMapping(value = "", method = RequestMethod.POST, consumes = { "application/json",
 	"application/xml" }, produces = { "application/json", "application/xml" })
 	public ResponseEntity<Page<LocalMarketDto>> getAllByAdress(@RequestParam( value = "page", required = false, defaultValue = "0") int page,
-		    @RequestParam (value = "size", required = false, defaultValue = "10") int size, @RequestParam(required = false, defaultValue = "3") int radius, @RequestBody(required = true) AdressDto adressDto) {
+		    @RequestParam (value = "size", required = false, defaultValue = "10") int size, @RequestParam(value = "radius", required = false, defaultValue = "3") int radius, @RequestBody(required = true) AdressDto adressDto) {
 
 		Page<LocalMarketDto> localMarketsFound = localMarketService.getAllByAdress(page, size, adressDto, radius);
 
@@ -62,15 +62,6 @@ public class LocalMarketController {
 
 	}
 
-	// Soft delete method
-	@RequestMapping(value = "", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> deleteLocalMarket(@RequestParam(required = true) Long id) {
-
-		Boolean isDeleted = localMarketService.deleteLocalMarketById(id);
-
-		return new ResponseEntity<Boolean>(isDeleted, HttpStatus.OK);
-
-	}
 
 	@GetMapping(value = "")
 	public ResponseEntity<LocalMarketDto> getLocalMarketById(@RequestParam(required = true) Long id) {

@@ -2,8 +2,6 @@ package com.bradescoConexoes.demo.dto;
 
 import java.util.List;
 
-import com.bradescoConexoes.demo.domain.AdressDto;
-
 public class LocalMarketDto {
 
 	private Long id;
@@ -26,6 +24,10 @@ public class LocalMarketDto {
 		this.adress = adress;
 		this.category = categoryDto;
 		this.avaliations = avaliations;
+	}
+
+	public LocalMarketDto() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {

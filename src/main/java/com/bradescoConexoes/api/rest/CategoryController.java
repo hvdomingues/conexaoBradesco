@@ -60,15 +60,6 @@ public class CategoryController {
 
 	}
 
-	// Soft delete method
-	@RequestMapping(value = "", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> deleteCategory(@RequestParam(required = true) Long id) {
-
-		Boolean isDeleted = categoryService.deleteCategoryById(id);
-
-		return new ResponseEntity<Boolean>(isDeleted, HttpStatus.OK);
-
-	}
 
 	@GetMapping(value = "")
 	public ResponseEntity<CategoryDto> getCategoryById(@RequestParam(required = true) Long id) {
